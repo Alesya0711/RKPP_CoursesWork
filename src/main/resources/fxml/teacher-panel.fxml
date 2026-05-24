@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.alesya0711.laba6.view.controllers.TeacherPanelController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-padding: 10;">
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="%profil.teacher" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="logoutButton" onAction="#handleLogout" text="%profil.btn_exit" />
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+
+            <!-- Вкладка 1: Мой профиль -->
+            <Tab closable="false" text="%profil.title">
+                <ScrollPane fitToWidth="true">
+                    <VBox spacing="15" style="-fx-padding: 15;">
+                        <TitledPane expanded="true" text="%profil.info">
+                            <GridPane hgap="10" vgap="10">
+                                <Label text="%profil.fio" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="teacherFullNameField" prefWidth="300" maxWidth="500" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                <Label text="%profil.email" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <TextField fx:id="teacherEmailField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <ImageView fx:id="teacherPhotoView" fitHeight="100" fitWidth="100" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.rowSpan="2" />
+                                <Button fx:id="saveProfileButton" onAction="#saveProfile" text="%profil.btn_save" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <columnConstraints>
+                           <ColumnConstraints />
+                           <ColumnConstraints />
+                           <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                        </rowConstraints>
+                            </GridPane>
+                        </TitledPane>
+                        <TableView fx:id="coursesTable" prefHeight="150">
+                            <columns>
+                                <TableColumn fx:id="courseIdColumn" prefWidth="50" text="№" />
+                                <TableColumn fx:id="courseNameColumn" prefWidth="350" text="%profil.namecourse" />
+                            </columns>
+                        </TableView>
+                        <TableView fx:id="groupsTable" prefHeight="150">
+                            <columns>
+                                <TableColumn fx:id="groupIdColumn" prefWidth="50" text="№" />
+                                <TableColumn fx:id="groupNameColumn" prefWidth="350" text="%profil.namegroup" />
+                            </columns>
+                        </TableView>
+                        <TableView fx:id="studentsTable" prefHeight="200">
+                            <columns>
+                                <TableColumn fx:id="studentIdColumn" prefWidth="50" text="№" />
+                                <TableColumn fx:id="studentFullNameColumn" prefWidth="250" text="%profil.fio" />
+                                <TableColumn fx:id="studentEmailColumn" prefWidth="200" text="Email" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+            <!-- Вкладка 2: Успеваемость -->
+            <Tab closable="false" text="%assignment.title">
+                <ScrollPane fitToWidth="true">
+                    <VBox spacing="15" style="-fx-padding: 15;">
+                        <GridPane hgap="10" vgap="10">
+                            <Label text="%assignment.course" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <ComboBox fx:id="courseComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <Label text="%assignment.group" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <ComboBox fx:id="groupComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label text="%assignment.topic" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <ComboBox fx:id="topicComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+
+                        <TitledPane text="%assignment.indivAsigments">
+                            <VBox spacing="10">
+                                <HBox spacing="10">
+                                    <Button onAction="#addAssignment" text="%assignment.add" />
+                                    <Button onAction="#editAssignment" text="%assignment.edit" />
+                                    <Button onAction="#gradeAssignment" text="%assignment.grade" />
+                                    <Button onAction="#deleteAssignment" text="%assignment.delete"
+                                            style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+                                </HBox>
+                                <TableView fx:id="assignmentsTable" prefHeight="200">
+                                    <columns>
+                                        <TableColumn fx:id="assignStudentColumn" prefWidth="200" text="%assignment.student" />
+                                        <TableColumn fx:id="assignTaskColumn" prefWidth="300" text="%assignment.asigment" />
+                                        <TableColumn fx:id="assignGradeColumn" prefWidth="100" text="%assignment.grade2" />
+                                        <TableColumn fx:id="assignStatusColumn" prefWidth="150" text="%assignment.status" />
+                                    </columns>
+                                </TableView>
+                            </VBox>
+                        </TitledPane>
+
+                        <TitledPane text="%assignment.finalWork">
+                            <VBox spacing="10">
+                                <HBox spacing="10">
+                                    <Button onAction="#addFinalWork" text="%assignment.add" />
+                                    <Button onAction="#editFinalWork" text="%assignment.edit" />
+                                    <Button onAction="#deleteFinalWork" text="%assignment.delete"
+                                            style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+                                </HBox>
+                                <TableView fx:id="finalWorksTable" prefHeight="150">
+                                    <columns>
+                                        <TableColumn fx:id="finalStudentColumn" prefWidth="200" text="%assignment.student" />
+                                        <TableColumn fx:id="finalTicketColumn" prefWidth="100" text="%assignment.bilet" />
+                                        <TableColumn fx:id="finalTheoryGradeColumn" prefWidth="100" text="%assignment.teoria" />
+                                        <TableColumn fx:id="finalPracticeGradeColumn" prefWidth="120" text="%assignment.practika" />
+                                        <TableColumn fx:id="finalAverageColumn" prefWidth="100" text="%assignment.middle" />
+                                    </columns>
+                                </TableView>
+                            </VBox>
+                        </TitledPane>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+            <!-- Вкладка 3: Посещаемость -->
+            <Tab closable="false" text="%attendanse.title">
+                <ScrollPane fitToWidth="true">
+                    <VBox spacing="15" style="-fx-padding: 15;">
+                        <GridPane hgap="10" vgap="10">
+                            <Label text="%attendanse.course" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <ComboBox fx:id="attendanceCourseCombo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <Label text="%attendanse.group" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <ComboBox fx:id="attendanceGroupCombo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label text="%attendanse.topic" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <ComboBox fx:id="attendanceTopicCombo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <Label text="%attendanse.lesson" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <ComboBox fx:id="attendanceLessonCombo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+
+                        <TableView fx:id="attendanceMarkTable" prefHeight="300">
+                            <columns>
+                                <TableColumn fx:id="attendMarkIdColumn" prefWidth="40" text="№" />
+                                <TableColumn fx:id="attendMarkStudentColumn" prefWidth="250" text="%attendanse.fio" />
+                                <TableColumn fx:id="attendMarkTopicColumn" prefWidth="300" text="%attendanse.topicLesson" />
+                                <TableColumn fx:id="attendMarkTypeColumn" prefWidth="150" text="%attendanse.type" />
+                                <TableColumn fx:id="attendMarkPresentColumn" prefWidth="150" text="%attendanse.true/false" />
+                            </columns>
+                        </TableView>
+
+                        <HBox spacing="10">
+                            <Button fx:id="saveAttendanceButton" onAction="#saveAttendance" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="%attendanse.save" />
+                            <Button fx:id="addNewLessonButton" onAction="#addNewLessonFromAttendance" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="%attendanse.addLesson" />
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+            <!-- Вкладка 4: Отчеты -->
+            <Tab closable="false" text="%reports.title">
+                <VBox spacing="15" style="-fx-padding: 15;">
+                    <TitledPane expanded="true" text="%reports.title">
+                        <VBox spacing="10">
+                            <GridPane hgap="10" vgap="10">
+                                <Label text="%reports.course" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <ComboBox fx:id="reportCourseCombo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                <Label text="%reports.group" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <ComboBox fx:id="reportGroupCombo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label text="%reports.period" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <DatePicker fx:id="reportStartDate" promptText="%reports.s" />
+                                    <DatePicker fx:id="reportEndDate" promptText="%reports.po" />
+                                </HBox>
+                        <columnConstraints>
+                           <ColumnConstraints />
+                           <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                        </rowConstraints>
+                            </GridPane>
+                            <CheckBox fx:id="includeGradesCheck" selected="true" text="%reports.addAssignmet" />
+                            <CheckBox fx:id="includeAttendanceCheck" selected="true" text="%reports.addAttendanse" />
+                            <Button fx:id="generateComplexReportButton" onAction="#generateComplexReport" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="%reports.createReports" />
+                            <TextArea fx:id="complexReportArea" style="-fx-font-family: 'Consolas', 'Courier New', monospace; -fx-font-size: 12px;"
+                                      editable="false"
+                                      wrapText="true"
+                                      prefHeight="400.0"
+                                      prefWidth="600.0" promptText=" " />
+                            <HBox spacing="10"><Button onAction="#exportToPdf" text="%reports.exel" /></HBox>
+                        </VBox>
+                    </TitledPane>
+                </VBox>
+            </Tab>
+
+        </TabPane>
+    </center>
+</BorderPane>

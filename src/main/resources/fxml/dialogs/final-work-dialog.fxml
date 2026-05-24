@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/21"
+      fx:controller="ru.alesya0711.laba6.view.controllers.FinalWorkDialogController"
+      spacing="15.0"
+      style="-fx-padding: 20;">
+
+    <Label fx:id="dialogTitleLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="%addFinalWork.title"/>
+
+    <GridPane hgap="10.0" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="120.0"/>
+            <ColumnConstraints minWidth="250.0"/>
+        </columnConstraints>
+
+        <Label text="%addFinalWork.student" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <ComboBox fx:id="studentComboBox" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="%addFinalWork.tiket" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="ticketField" promptText="Например: ME-5" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="%addFinalWork.data" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <DatePicker fx:id="examDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="%addFinalWork.gradeT" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Spinner fx:id="theoryGradeSpinner" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="%addFinalWork.gradeP" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <Spinner fx:id="practiceGradeSpinner" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Label text="%addFinalWork.averageGrade" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <Label fx:id="averageGradeLabel" style="-fx-font-weight: bold; -fx-text-fill: #2196F3;" text="-" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    </GridPane>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10.0">
+        <Button fx:id="saveButton" defaultButton="true" onAction="#saveFinalWork" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="%addFinalWork.save"/>
+        <Button cancelButton="true" onAction="#cancel" text="%addFinalWork.cansel"/>
+    </HBox>
+</VBox>
