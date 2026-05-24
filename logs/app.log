@@ -1,0 +1,24 @@
+2026-05-18 14:52:01.296 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Попытка входа пользователя: teacher1
+2026-05-18 14:52:01.327 [JavaFX Application Thread] DEBUG r.a.laba6.util.DatabaseConnection - Загружены настройки подключения: url=jdbc:postgresql://localhost:5432/, db=CoursesWorkRKPP
+2026-05-18 14:52:01.328 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Подключение к jdbc:postgresql://localhost:5432/CoursesWorkRKPP пользователем teacher1
+2026-05-18 14:52:01.494 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Соединение установлено успешно
+2026-05-18 14:52:01.541 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Успешная аутентификация: teacher1 (ID: 2)
+2026-05-18 14:52:02.668 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Основное окно отображено
+2026-05-18 14:57:41.366 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Попытка входа пользователя: teacher1
+2026-05-18 14:57:41.372 [JavaFX Application Thread] DEBUG r.a.laba6.util.DatabaseConnection - Загружены настройки подключения: url=jdbc:postgresql://localhost:5432/, db=CoursesWorkRKPP
+2026-05-18 14:57:41.372 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Подключение к jdbc:postgresql://localhost:5432/CoursesWorkRKPP пользователем teacher1
+2026-05-18 14:57:41.553 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Соединение установлено успешно
+2026-05-18 14:57:41.582 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Успешная аутентификация: teacher1 (ID: 2)
+2026-05-18 14:57:42.621 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Основное окно отображено
+2026-05-18 15:05:16.947 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Попытка входа пользователя: teacher1
+2026-05-18 15:05:16.952 [JavaFX Application Thread] DEBUG r.a.laba6.util.DatabaseConnection - Загружены настройки подключения: url=jdbc:postgresql://localhost:5432/, db=CoursesWorkRKPP
+2026-05-18 15:05:16.952 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Подключение к jdbc:postgresql://localhost:5432/CoursesWorkRKPP пользователем teacher1
+2026-05-18 15:05:17.097 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Соединение установлено успешно
+2026-05-18 15:05:17.122 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Успешная аутентификация: teacher1 (ID: 2)
+2026-05-18 15:05:18.028 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Основное окно отображено
+2026-05-18 15:08:49.247 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Попытка входа пользователя: teacher1
+2026-05-18 15:08:49.253 [JavaFX Application Thread] DEBUG r.a.laba6.util.DatabaseConnection - Загружены настройки подключения: url=jdbc:postgresql://localhost:5432/, db=CoursesWorkRKPP
+2026-05-18 15:08:49.253 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Подключение к jdbc:postgresql://localhost:5432/CoursesWorkRKPP пользователем teacher1
+2026-05-18 15:08:49.397 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Соединение установлено успешно
+2026-05-18 15:08:49.424 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Успешная аутентификация: teacher1 (ID: 2)
+2026-05-18 15:08:50.318 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Основное окно отображено

@@ -1,0 +1,89 @@
+2026-05-23 14:57:49.680 [JavaFX Application Thread] INFO  ru.alesya0711.laba6.Main - Приложение запущено
+2026-05-23 14:57:49.982 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Инициализация LoginController
+2026-05-23 14:57:49.982 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Заполнение списка языков
+2026-05-23 14:57:49.984 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Язык по умолчанию: Русский
+2026-05-23 14:57:49.998 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Тексты интерфейса обновлены
+2026-05-23 14:57:49.999 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Интерфейс авторизации настроен
+2026-05-23 14:57:55.464 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Смена языка интерфейса на: English
+2026-05-23 14:57:55.465 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Ресурсы для локали en загружены успешно
+2026-05-23 14:57:55.465 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Тексты интерфейса обновлены
+2026-05-23 14:58:06.529 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Попытка входа пользователя: teacher1
+2026-05-23 14:58:06.529 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Вызов DatabaseConnection.initConnection...
+2026-05-23 14:58:06.541 [JavaFX Application Thread] DEBUG r.a.laba6.util.DatabaseConnection - Загружены настройки подключения: url=jdbc:postgresql://localhost:5432/, db=CoursesWorkRKPP
+2026-05-23 14:58:06.542 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Подключение к jdbc:postgresql://localhost:5432/CoursesWorkRKPP пользователем teacher1
+2026-05-23 14:58:06.697 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Соединение установлено успешно
+2026-05-23 14:58:06.697 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Соединение с БД установлено для пользователя teacher1
+2026-05-23 14:58:06.761 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Успешная аутентификация: teacher1 (ID: 2)
+2026-05-23 14:58:07.002 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Инициализация панели преподавателя
+2026-05-23 14:58:07.002 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Создание DAO объектов...
+2026-05-23 14:58:07.003 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Все DAO объекты успешно созданы
+2026-05-23 14:58:07.008 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Панель преподавателя инициализирована
+2026-05-23 14:58:07.008 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Установка текущего преподавателя: ID=2
+2026-05-23 14:58:07.009 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - ФИО преподавателя: Смирнова Мария Петровна
+2026-05-23 14:58:07.009 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загрузка данных для преподавателя 2
+2026-05-23 14:58:07.009 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка курсов для преподавателя ID=2
+2026-05-23 14:58:07.034 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 1 курсов
+2026-05-23 14:58:07.035 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка курсов для вкладки успеваемости
+2026-05-23 14:58:07.035 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 1 курсов для успеваемости
+2026-05-23 14:58:07.036 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка курсов для вкладки посещаемости
+2026-05-23 14:58:07.036 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 1 курсов для посещаемости
+2026-05-23 14:58:07.036 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка курсов для вкладки отчетов
+2026-05-23 14:58:07.037 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 1 курсов для отчетов
+2026-05-23 14:58:07.510 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Основное окно отображено
+2026-05-23 14:58:13.985 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка групп для курса ID=2 (успеваемость)
+2026-05-23 14:58:13.990 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 1 групп
+2026-05-23 14:58:13.990 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка тем для курса ID=2
+2026-05-23 14:58:13.992 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 2 тем
+2026-05-23 14:58:13.994 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - ComboBox групп обновлен (disabled=false)
+2026-05-23 14:58:13.997 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - ComboBox тем обновлен (disabled=false)
+2026-05-23 14:58:18.460 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка индивидуальных заданий для группы ID=2 и темы ID=3
+2026-05-23 14:58:18.481 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 3 индивидуальных заданий
+2026-05-23 14:58:18.482 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка итоговых работ для группы ID=2 и курса ID=2
+2026-05-23 14:58:18.498 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 2 итоговых работ
+2026-05-23 14:58:26.344 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка групп для посещаемости, курс ID=2
+2026-05-23 14:58:26.345 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 1 групп для посещаемости
+2026-05-23 14:58:26.345 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка тем для посещаемости, курс ID=2
+2026-05-23 14:58:26.345 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 2 тем для посещаемости
+2026-05-23 14:58:28.965 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка занятий для посещаемости, тема ID=3
+2026-05-23 14:58:28.970 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 4 занятий для посещаемости
+2026-05-23 14:58:31.096 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Добавление нового занятия
+2026-05-23 14:58:31.096 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Открытие диалога добавления занятия (courseId=2, topicId=3)
+2026-05-23 14:58:31.181 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Инициализация AddLessonDialogController
+2026-05-23 14:58:31.181 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - LessonDAO успешно создан
+2026-05-23 14:58:31.185 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Интерфейс диалога настроен
+2026-05-23 14:58:31.185 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Установлены начальные данные: teacherId=2, courseId=2, topicId=3
+2026-05-23 14:58:31.185 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Загрузка начальных данных для курса ID=2 и темы ID=3
+2026-05-23 14:58:31.186 [JavaFX Application Thread] INFO  r.a.l.v.c.AddLessonDialogController - Загружено 1 курсов для преподавателя ID=2
+2026-05-23 14:58:31.187 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Выбран курс ID=2: Программирование на Python
+2026-05-23 14:58:31.187 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Загрузка тем для курса ID=2
+2026-05-23 14:58:31.188 [JavaFX Application Thread] INFO  r.a.l.v.c.AddLessonDialogController - Загружено 2 тем для курса ID=2
+2026-05-23 14:58:31.188 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Загрузка тем для курса ID=2
+2026-05-23 14:58:31.189 [JavaFX Application Thread] INFO  r.a.l.v.c.AddLessonDialogController - Загружено 2 тем для курса ID=2
+2026-05-23 14:58:31.190 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Тема ID=3 выбрана автоматически
+2026-05-23 14:58:31.192 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Контекст аудита установлен для teacher_id=2
+2026-05-23 14:58:36.847 [JavaFX Application Thread] INFO  r.a.l.v.c.AddLessonDialogController - Сохранение нового занятия
+2026-05-23 14:58:36.847 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Подготовка данных: тема ID=3, номер=1, дата=2026-05-23, тип=Лекция
+2026-05-23 14:58:36.847 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Проверка уникальности номера 1 для темы ID=3
+2026-05-23 14:58:36.951 [JavaFX Application Thread] INFO  r.a.l.v.c.AddLessonDialogController - Занятие успешно добавлено в расписание (ID темы: 3, номер: 1)
+2026-05-23 14:58:41.063 [JavaFX Application Thread] DEBUG r.a.l.v.c.AddLessonDialogController - Диалоговое окно закрыто
+2026-05-23 14:58:41.065 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Контекст аудита сброшен
+2026-05-23 14:58:41.065 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Диалог закрыт, обновление списка занятий
+2026-05-23 14:58:41.066 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка занятий для посещаемости, тема ID=3
+2026-05-23 14:58:41.069 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Загружено 5 занятий для посещаемости
+2026-05-23 14:58:41.069 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Контекст аудита сброшен
+2026-05-23 14:58:44.696 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загрузка студентов для таблицы посещаемости, группа ID=2
+2026-05-23 14:58:44.707 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Загружено 0 существующих записей посещаемости
+2026-05-23 14:58:44.726 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Таблица посещаемости заполнена: 2 записей
+2026-05-23 14:58:50.032 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Выход из системы
+2026-05-23 14:58:50.032 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Пользователь выходит из системы
+2026-05-23 14:58:52.226 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Пользователь подтвердил выход
+2026-05-23 14:58:52.227 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Очистка данных сессии...
+2026-05-23 14:58:52.227 [JavaFX Application Thread] DEBUG r.a.l.v.c.TeacherPanelController - Сессия очищена
+2026-05-23 14:58:52.237 [JavaFX Application Thread] INFO  r.a.l.v.controllers.LoginController - Инициализация LoginController
+2026-05-23 14:58:52.238 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Заполнение списка языков
+2026-05-23 14:58:52.238 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Язык по умолчанию: English
+2026-05-23 14:58:52.239 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Тексты интерфейса обновлены
+2026-05-23 14:58:52.239 [JavaFX Application Thread] DEBUG r.a.l.v.controllers.LoginController - Интерфейс авторизации настроен
+2026-05-23 14:58:52.270 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Закрытие соединения с БД
+2026-05-23 14:58:52.272 [JavaFX Application Thread] INFO  r.a.laba6.util.DatabaseConnection - Соединение закрыто
+2026-05-23 14:58:52.272 [JavaFX Application Thread] INFO  r.a.l.v.c.TeacherPanelController - Выход выполнен успешно, возвращение на экран входа

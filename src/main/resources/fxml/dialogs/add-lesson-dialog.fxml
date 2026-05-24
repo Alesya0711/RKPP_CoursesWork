@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/21"
+      fx:controller="ru.alesya0711.laba6.view.controllers.AddLessonDialogController"
+      spacing="15.0" style="-fx-padding: 20;">
+
+    <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="%lesson.title"/>
+
+    <GridPane hgap="10.0" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="120.0"/>
+            <ColumnConstraints minWidth="250.0"/>
+        </columnConstraints>
+
+        <Label text="%lesson.cours" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <ComboBox fx:id="lessonCourseCombo" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="%lesson.topic" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="lessonTopicCombo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="%lesson.numderLesson" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Spinner fx:id="lessonNumberSpinner" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="%lesson.data" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <DatePicker fx:id="lessonDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="%lesson.type" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <ComboBox fx:id="lessonTypeCombo" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    </GridPane>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10.0">
+        <Button fx:id="saveLessonButton" onAction="#saveLesson" text="%lesson.save" defaultButton="true"/>
+        <Button onAction="#cancel" text="%lesson.cansel" cancelButton="true"/>
+    </HBox>
+</VBox>
