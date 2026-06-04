@@ -82,6 +82,22 @@ public class LessonDAOImpl implements LessonDAO {
     }
 
     /**
+     * Удаляет занятие по идентификатору.
+     * @param lessonId идентификатор занятия
+     * @return true если запись удалена
+     */
+    public boolean deleteById(Long lessonId) {
+        String sql = "DELETE FROM lessons WHERE lesson_id = ?";
+        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setLong(1, lessonId);
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
+    /**
      * Преобразует строку результата запроса {@link ResultSet} в объект {@link Lesson}.
      *
      * @param rs результат запроса, указывающий на текущую строку данных
