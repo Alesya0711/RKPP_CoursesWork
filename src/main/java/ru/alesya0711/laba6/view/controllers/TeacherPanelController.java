@@ -466,30 +466,58 @@ public class TeacherPanelController {
      * @implNote Использует {@link Platform#runLater(Runnable)} для безопасного обновления UI
      */
     private void loadGroupsForCourseP(Long courseId) {
-        log.debug("Загрузка групп для курса ID={} (успеваемость)", courseId);
+        log.debug("=== НАЧАЛО ЗАГРУЗКИ ГРУПП для курса ID={} ===", courseId);
+
+        if (courseId == null) {
+            log.error("courseId is null!");
+            return;
+        }
+
+        List<Group> groups;
         try {
-            List<Group> groups = groupDAO.findByCourseId(courseId);
+            log.debug("Вызов groupDAO.findByCourseId({})", courseId);
+            groups = groupDAO.findByCourseId(courseId);
             log.info("Загружено {} групп", groups.size());
 
-            ObservableList<String> groupItems = FXCollections.observableArrayList();
+            if (groups.isEmpty()) {
+                log.warn("Группы не найдены для курса ID={}", courseId);
+            } else {
+                for (Group g : groups) {
+                    log.debug("  Группа: ID={}, Name={}", g.getGroupId(), g.getGroupName());
+                }
+            }
+        } catch (Exception e) {
+            log.error("Ошибка при загрузке групп", e);
+            groups = List.of();
+        }
+
+        // 🔥 Создаём ФИНАЛЬНУЮ КОПИЮ для использования в лямбде
+        final List<Group> groupsForUI = groups;
+
+        // Обновление UI
+        log.debug("Обновление UI...");
+        Platform.runLater(() -> {
+            ObservableList<String> newGroupItems = FXCollections.observableArrayList();
             groupIdMap.clear();
 
-            for (Group g : groups) {
+            for (Group g : groupsForUI) {  // 🔥 Используем final-копию
                 String groupName = g.getGroupName();
-                groupItems.add(groupName);
+                newGroupItems.add(groupName);
                 groupIdMap.put(groupName, g.getGroupId());
             }
 
-            Platform.runLater(() -> {
-                groupComboBox.getItems().clear();
-                groupComboBox.setItems(groupItems);
-                groupComboBox.getSelectionModel().clearSelection();
-                groupComboBox.setDisable(groupItems.isEmpty());
-                log.debug("ComboBox групп обновлен (disabled={})", groupComboBox.isDisable());
-            });
-        } catch (Exception e) {
-            log.error("Ошибка загрузки групп", e);
-        }
+            groupComboBox.getItems().clear();
+            groupComboBox.setItems(newGroupItems);
+            groupComboBox.getSelectionModel().clearSelection();
+            groupComboBox.setDisable(newGroupItems.isEmpty());
+
+            groupComboBox.applyCss();
+            groupComboBox.layout();
+
+            log.debug("=== ГРУППЫ ЗАГРУЖЕНЫ ===");
+            log.debug("groupComboBox.getItems().size() = {}", groupComboBox.getItems().size());
+            log.debug("groupComboBox.isDisabled() = {}", groupComboBox.isDisabled());
+        });
     }
 
     /**
@@ -498,31 +526,65 @@ public class TeacherPanelController {
      * @param courseId идентификатор курса
      * @implNote Использует {@link Platform#runLater(Runnable)} для безопасного обновления UI
      */
+    /**
+     * Загружает темы выбранного курса в комбобокс успеваемости.
+     *
+     * @param courseId идентификатор курса
+     * @implNote Использует {@link Platform#runLater(Runnable)} для безопасного обновления UI
+     */
     private void loadTopicsForCourse(Long courseId) {
-        log.debug("Загрузка тем для курса ID={}", courseId);
+        log.debug("=== НАЧАЛО ЗАГРУЗКИ ТЕМ для курса ID={} ===", courseId);
+
+        if (courseId == null) {
+            log.error("courseId is null!");
+            return;
+        }
+
+        List<Topic> topics;
         try {
-            List<Topic> topics = topicDAO.findByCourseId(courseId);
+            log.debug("Вызов topicDAO.findByCourseId({})", courseId);
+            topics = topicDAO.findByCourseId(courseId);
             log.info("Загружено {} тем", topics.size());
 
-            ObservableList<String> topicItems = FXCollections.observableArrayList();
+            if (topics.isEmpty()) {
+                log.warn("Темы не найдены для курса ID={}", courseId);
+            } else {
+                for (Topic t : topics) {
+                    log.debug("  Тема: ID={}, Name={}", t.getTopicId(), t.getTopicName());
+                }
+            }
+        } catch (Exception e) {
+            log.error("Ошибка при загрузке тем", e);
+            topics = List.of();
+        }
+
+        // 🔥 Создаём ФИНАЛЬНУЮ КОПИЮ для использования в лямбде
+        final List<Topic> topicsForUI = topics;
+
+        // Обновление UI
+        log.debug("Обновление UI...");
+        Platform.runLater(() -> {
+            ObservableList<String> newTopicItems = FXCollections.observableArrayList();
             topicIdMap.clear();
 
-            for (Topic t : topics) {
+            for (Topic t : topicsForUI) {  // 🔥 Используем final-копию
                 String topicName = t.getTopicName();
-                topicItems.add(topicName);
+                newTopicItems.add(topicName);
                 topicIdMap.put(topicName, t.getTopicId());
             }
 
-            Platform.runLater(() -> {
-                topicComboBox.getItems().clear();
-                topicComboBox.setItems(topicItems);
-                topicComboBox.getSelectionModel().clearSelection();
-                topicComboBox.setDisable(topicItems.isEmpty());
-                log.debug("ComboBox тем обновлен (disabled={})", topicComboBox.isDisable());
-            });
-        } catch (Exception e) {
-            log.error("Ошибка загрузки тем", e);
-        }
+            topicComboBox.getItems().clear();
+            topicComboBox.setItems(newTopicItems);
+            topicComboBox.getSelectionModel().clearSelection();
+            topicComboBox.setDisable(newTopicItems.isEmpty());
+
+            topicComboBox.applyCss();
+            topicComboBox.layout();
+
+            log.debug("=== ТЕМЫ ЗАГРУЖЕНЫ ===");
+            log.debug("topicComboBox.getItems().size() = {}", topicComboBox.getItems().size());
+            log.debug("topicComboBox.isDisabled() = {}", topicComboBox.isDisabled());
+        });
     }
 
     /**
